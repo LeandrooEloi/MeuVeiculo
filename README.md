@@ -6,7 +6,7 @@ Landing page + vitrine de veículos para uma plataforma fictícia de compra e an
 
 > Prints do projeto em `acents/imagens`
 
-![Tela inicial](assets/imagens/cap_01.png)
+![Tela inicial](assets/imagens/cap_1.png)
 ![Destaques da semana](assets/imagens/cap_2.png)
 
 ## Funcionalidades
