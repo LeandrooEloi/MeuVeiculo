@@ -22,6 +22,6 @@ Landing page + vitrine de veículos para uma plataforma fictícia de compra e an
 
 - HTML5
 - CSS3
-- JavaScript 
+- JavaScript
 
 
