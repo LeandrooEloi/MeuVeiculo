@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>MeuVeiculo - Encontre seu próximo carro com segurança</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+</head>
+
+<body>
+  <!-- Header fixo -->
+  <header class="site-header" id="topo">
+    <div class="container header-row">
+      <a class="brand" href="#topo" aria-label="Ir para o início">
+        <span class="material-symbols-outlined brand-icon" aria-hidden="true">directions_car</span>
+        <span class="brand-name">MeuVeiculo</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav-link" href="#topo">Início</a>
+        <a class="nav-link" href="#estoque">Estoque</a>
+        <a class="nav-link" href="#servicos">Serviços</a>
+        <a class="nav-link" href="#depoimentos">Depoimentos</a>
+        <a class="nav-link" href="#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary" type="button" id="btnAnunciar">Anunciar veículo</button>
+
+        <button class="icon-btn nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" id="btnMenu">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu-inner">
+        <a class="mobile-link" href="#topo">Início</a>
+        <a class="mobile-link" href="#estoque">Estoque</a>
+        <a class="mobile-link" href="#servicos">Serviços</a>
+        <a class="mobile-link" href="#depoimentos">Depoimentos</a>
+        <a class="mobile-link" href="#contato">Contato</a>
+        <button class="btn btn-primary mobile-cta" type="button" id="btnAnunciarMobile">Anunciar veículo</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            Encontre seu próximo veículo com <span class="text-primary">segurança</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            As melhores condições e procedência garantida para você conquistar seu novo carro hoje mesmo com taxas exclusivas.
+          </p>
+
+          <!-- Busca -->
+          <form class="search-card" id="searchForm" autocomplete="off">
+            <div class="field">
+              <label for="fMarca">Marca</label>
+              <select id="fMarca" name="marca">
+                <option value="">Todas as marcas</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Honda">Honda</option>
+                <option value="Jeep">Jeep</option>
+                <option value="BMW">BMW</option>
+                <option value="Ford">Ford</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="fModelo">Modelo</label>
+              <input id="fModelo" name="modelo" type="text" placeholder="Ex: Corolla"/>
+            </div>
+
+            <div class="field">
+              <label for="fAno">Ano</label>
+              <select id="fAno" name="ano">
+                <option value="">Qualquer ano</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="fPreco">Preço máx.</label>
+              <select id="fPreco" name="preco">
+                <option value="">Sem limite</option>
+                <option value="50000">R$ 50.000</option>
+                <option value="100000">R$ 100.000</option>
+                <option value="150000">R$ 150.000</option>
+                <option value="200000">R$ 200.000</option>
+                <option value="9999999">R$ 200.000+</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary search-btn" type="submit">
+              <span class="material-symbols-outlined" aria-hidden="true">search</span>
+              Buscar
+            </button>
+
+            <p class="search-hint" id="searchHint" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-image">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa_iR_zru3ytRWro6NjaTV9gT8G_EsN7pAU8c6gZYlYCBv5UD6pGrqPiU6BOGNHniXYevxa8ZdI8NmyKKSLoyewzOvQeegSq2OI4pF4xf46eG7y_P4xM_8JiYGVfCNjeDb_Dz8YMdjVmW2vpgjjaK9Inw4yg9FWhdikpfE7q3VoOSnLfT4l5AY9AT-OgSOe0r6FsNzQqGGgI5e2NvZFpaKniuAoGl6wUHijW6uEJx9JjZ8V9-C00rbiWzKZ_hBtGtvj0R0Um-8-mo"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços / destaques -->
+    <section class="section section-soft" id="servicos">
+      <div class="container">
+        <div class="cards-3">
+          <article class="feature-card">
+            <div class="feature-icon">
+              <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
+            </div>
+            <div>
+              <h3>Revisados</h3>
+              <p>Inspeção rigorosa de 150 itens em todos os veículos do estoque.</p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <span class="material-symbols-outlined" aria-hidden="true">payments</span>
+            </div>
+            <div>
+              <h3>Financiamento</h3>
+              <p>Taxas exclusivas e aprovação rápida com os melhores bancos.</p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <span class="material-symbols-outlined" aria-hidden="true">shield</span>
+            </div>
+            <div>
+              <h3>Garantia</h3>
+              <p>Sua tranquilidade garantida com cobertura total por 1 ano.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estoque -->
+    <section class="section" id="estoque">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Nosso estoque</span>
+            <h2>Destaques da semana</h2>
+            <p class="muted">Filtre por marca, modelo, ano e preço para encontrar o carro ideal.</p>
+          </div>
+
+          <div class="head-actions">
+            <button class="btn btn-ghost" type="button" id="btnLimparFiltros">Limpar filtros</button>
+            <a class="link-primary" href="#contato">Quero ajuda para escolher</a>
+          </div>
+        </div>
+
+        <div class="inventory-meta">
+          <span class="pill" id="resultsCount">0 veículos</span>
+          <span class="muted" id="activeFilters">Sem filtros aplicados</span>
+        </div>
+
+        <div class="inventory-grid" id="inventoryGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="center-head">
+          <h2>Como funciona</h2>
+          <p class="muted">Três passos simples para seu carro novo.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-badge">1</div>
+            <h3>Buscar</h3>
+            <p>Navegue pelo nosso estoque online e escolha o veículo ideal para suas necessidades.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-badge">2</div>
+            <h3>Agendar visita</h3>
+            <p>Fale com nossos consultores e agende um test-drive no horário de sua preferência.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-badge">3</div>
+            <h3>Fechar negócio</h3>
+            <p>Aprovamos seu financiamento e você já sai de carro novo com toda garantia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <div class="center-head">
+          <h2>O que dizem nossos clientes</h2>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            <div class="quote" aria-hidden="true">“</div>
+            <div class="stars" aria-label="Avaliação 5 de 5">
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </div>
+            <p>"Atendimento impecável! Encontrei o carro que queria e o processo de financiamento foi muito mais rápido do que eu esperava."</p>
+            <div class="who">
+              <strong>Ricardo Santos</strong>
+              <span class="muted">São Paulo, SP</span>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="quote" aria-hidden="true">“</div>
+            <div class="stars" aria-label="Avaliação 5 de 5">
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </div>
+            <p>"A transparência na negociação foi o que mais me chamou atenção. O carro estava exatamente como nas fotos. Recomendo!"</p>
+            <div class="who">
+              <strong>Marina Oliveira</strong>
+              <span class="muted">Curitiba, PR</span>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="quote" aria-hidden="true">“</div>
+            <div class="stars" aria-label="Avaliação 5 de 5">
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </div>
+            <p>"Vendi meu carro antigo e comprei um novo na mesma semana. Praticidade total e um preço justo na avaliação."</p>
+            <div class="who">
+              <strong>Carlos Eduardo</strong>
+              <span class="muted">Belo Horizonte, MG</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section section-soft" id="contato">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-form">
+            <h2>Envie uma mensagem</h2>
+
+            <form id="contactForm">
+              <div class="two-cols">
+                <div class="field">
+                  <label for="cNome">Nome completo</label>
+                  <input id="cNome" name="nome" type="text" placeholder="Seu nome" required>
+                </div>
+
+                <div class="field">
+                  <label for="cWhats">WhatsApp</label>
+                  <input id="cWhats" name="whats" type="tel" placeholder="(00) 00000-0000" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="cEmail">E-mail</label>
+                <input id="cEmail" name="email" type="email" placeholder="seu@email.com" required>
+              </div>
+
+              <div class="field">
+                <label for="cMsg">Mensagem</label>
+                <textarea id="cMsg" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+              </div>
+
+              <button class="btn btn-primary btn-block" type="submit">Enviar mensagem</button>
+              <p class="form-note" id="formNote" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <aside class="contact-info" aria-label="Informações de contato">
+            <div>
+              <h3>Informações</h3>
+
+              <div class="info-list">
+                <div class="info-item">
+                  <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+                  <div>
+                    <strong>Endereço</strong>
+                    <p>Av. Rota Nova, 125<br/>Brooklin, São Paulo - SP</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                  <div>
+                    <strong>Horário</strong>
+                    <p>Seg - Sex: 08:00 às 17:00<br/>Sábados: 09:00 às 14:00</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <span class="material-symbols-outlined" aria-hidden="true">share</span>
+                  <div>
+                    <strong>Redes sociais</strong>
+                    <div class="social">
+                      <a class="social-btn" href="#" aria-label="Instagram">
+                        <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
+                      </a>
+                      <a class="social-btn" href="#" aria-label="YouTube">
+                        <span class="material-symbols-outlined" aria-hidden="true">smart_display</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a class="btn btn-whatsapp" id="btnWhatsFooter" href="#" target="_blank" rel="noreferrer">
+              <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+              Fale agora no WhatsApp
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="material-symbols-outlined brand-icon" aria-hidden="true">directions_car</span>
+          <span class="brand-name">meuVeiculo</span>
+        </div>
+        <p class="muted">
+          A plataforma definitiva para quem busca qualidade, segurança e as melhores taxas do mercado automotivo.
+        </p>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <ul class="footer-links">
+          <li><a href="#topo">Página inicial</a></li>
+          <li><a href="#estoque">Nosso estoque</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Fale conosco</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Suporte</h4>
+        <ul class="footer-links">
+          <li><a href="#">Central de ajuda</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Newsletter</h4>
+        <p class="muted">Receba novas ofertas diretamente no seu e-mail.</p>
+        <form class="newsletter" id="newsletterForm">
+          <input type="email" name="newsEmail" placeholder="Seu e-mail" required>
+          <button class="icon-btn" type="submit" aria-label="Enviar e-mail">
+            <span class="material-symbols-outlined" aria-hidden="true">send</span>
+          </button>
+        </form>
+        <p class="form-note" id="newsNote" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 meuVeiculo. Todos os direitos reservados.</p>
+      <div class="footer-mini">
+        <a href="#">Privacidade</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal detalhes -->
+  <div class="modal" id="vehicleModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detalhes do veículo">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <div class="modal-panel" role="document">
+      <button class="icon-btn modal-close" type="button" aria-label="Fechar" data-close-modal>
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+
+      <div class="modal-body">
+        <div class="modal-media">
+          <img id="modalImg" alt="Foto do veículo" src="">
+        </div>
+
+        <div class="modal-info">
+          <div class="modal-top">
+            <span class="badge" id="modalBadge">Disponível</span>
+            <h3 id="modalTitle">Veículo</h3>
+            <p class="muted" id="modalMeta">—</p>
+            <div class="modal-price" id="modalPrice">R$ 0</div>
+          </div>
+
+          <div class="modal-actions">
+            <a class="btn btn-primary" id="modalWhats" href="#" target="_blank" rel="noreferrer">
+              <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+              WhatsApp
+            </a>
+            <button class="btn btn-ghost" type="button" data-close-modal>Voltar</button>
+          </div>
+
+          <p class="muted modal-note">
+            Dica: esse é um modelo básico com dados mock. Depois a gente conecta em uma API/Firestore.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

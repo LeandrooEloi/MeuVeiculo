@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>meuVeiculo - Detalhes do veículo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./detalhes.js"></script>
+</head>
+
+<body>
+  <header class="site-header" id="topo">
+    <div class="container header-row">
+      <a class="brand" href="./index.html#topo" aria-label="Voltar para o início">
+        <span class="material-symbols-outlined brand-icon" aria-hidden="true">directions_car</span>
+        <span class="brand-name">meuVeiculo</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação">
+        <a class="nav-link" href="./index.html#estoque">Estoque</a>
+        <a class="nav-link" href="./index.html#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="./index.html#estoque">← Voltar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section section-soft">
+      <div class="container" id="detailRoot">
+        <div class="pill">Carregando detalhes…</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0;">
+      <p>© 2026 meuVeiculo. Todos os direitos reservados.</p>
+      <div class="footer-mini">
+        <a href="./index.html#contato">Fale conosco</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
