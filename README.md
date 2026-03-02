@@ -24,8 +24,4 @@ Landing page + vitrine de veículos para uma plataforma fictícia de compra e an
 - CSS3
 - JavaScript (Vanilla)
 
-## Como executar
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
